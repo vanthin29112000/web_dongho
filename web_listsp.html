@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./web_listsp.css" id="link_css"><script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <!-- Javascrip -->
+    <script src="./web.js"></script>
+    <script src="./web_listsp.js"></script>
+    <!--  -->
+    <!-- Dang nhap - Dang ki tai khoan -->
+    <div id="sign-in-account" class="sign-in">
+        <div class="form-sign-in">
+            <a href="#" id="btn-exit"><b>X</b></a>
+            <div id="login">
+                <h2>Login</h2>
+            </div>
+            <div id="center">
+                <div class="username">
+                    Username :
+                    <input type="text">
+                </div>
+                <div class="password">
+                    Password :
+                    <input type="text">
+                </div>
+                <div id="btn">    
+                    <i><a href="">Chưa có tài khoản ?</a></i>
+                    <div id="btn-login">
+                    
+                    <button><b>Login</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <div class="header">
+        <!-- Navigation bar -->
+        <div class="navigation-bar">
+            
+            <div class="task">
+                <div class="task1">
+                    <i class="fas fa-user-circle"></i>
+                    <a href="#sign-in-account">REGISTER or SIGN IN</a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="logo">
+                    <p>LOGO</p>
+                </div>
+                <div class="infor">
+                    <input type="text" placeholder=" ENTER YOUR KEYWORD " class="search">
+                    <div class="inform">
+                        <i class="fas fa-phone-square icon-call"></i>
+                        <div class="call-me">
+                            <b>800-140-1000s</b>
+                            <p>Mon-Fri: 8:00-17:00</p>
+                        </div>
+                        <div class="icon-heart-shopping">
+                            <i class="fas fa-heart icon"></i>
+                            <i class="fas fa-shopping-basket icon icon-relative"></i>
+                            <i class="fas fa-circle icon-circle"></i>
+                            <!-- So luong mua hang -->
+                            <div id="number"><b>10</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-l">
+                
+                <div class="head-navigation">
+                    <b class="category">
+                        <span class="fas fa-align-left"></span>
+                        <span class="category-n"><b>THƯƠNG HIỆU</b></span> 
+                    </b>
+                    
+                    <div class="dropdown-navigationbar">
+                        <!-- dung js de ra cac thuong hieu -->
+                        <script> dropdown_navigation_bar(); </script>    
+                    </div>
+                    
+                </div>
+                <div class="navigation-list-first">
+                    <h4><a href="./web.html">TRANG CHỦ</a></h4>
+                </div>
+                <script>navigation_l();</script>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div id="body">
+        <script>Load_Page_All_Products("Nam")</script>
+    </div>
+    <!--  -->
+    <!-- Social -->
+    <div class="social_page">
+        <p>SOCIAL PAGE : </p>
+        <ul id="Social">
+            <a href="https://www.facebook.com/profile.php?id=100008122305731"><i class="fab fa-facebook-square"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-youtube-square"></i></a>
+            <a href=""><i class="fab fa-skype"></i></a>
+        </ul>
+    </div>
+    <!--  -->
+    <!-- foodter -->
+    <div id="footer_title">
+        <div class="padding_footer">
+            <div class="subscribe">
+                <div>
+                    <i class="fas fa-envelope-open-text icon-letter"></i>
+                </div>
+                <div class="subscribe-im">
+                    <b>SIGN FOR NEWSLETTERS</b>
+                    <b><p>Be the First to Know. Sign up for newsletter today</p></b>
+                </div>
+                <div class="text-box">
+                    <input type="text" placeholder="Enter your email address">
+                    <button>Subcride</button>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="contact-us bg-footer">
+                    <b class="title-footer">ContactUs</b>
+                    <div class="flex">
+                        <i class="fas fa-mobile-alt icon-contact"></i>
+                        <div class="footer1">
+                            <p>Call Customer Services, We support 24/7 :</p>
+                            <b>84-0123-456-789</b>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-map-marker-alt icon-contact"></i>
+                        <div class="footer1">
+                            <b>Address:</b>
+                            <p>PO Box 1622 Vissaosang Street West</p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-envelope-open-text icon-contact"></i>
+                        <div class="footer1">
+                            <b>Email:</b>
+                            <p>Support@domain.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="custumer-service bg-footer">
+                    <b class="title-footer">Customer Service</b>
+                    <ul class="list">
+                        <li><a href="">Contact us</a></li>
+                        <li><a href="">Help and advice</a></li>
+                        <li><a href="">Shipping & Return</a></li>
+                        <li><a href="">Terms and conditions</a></li>
+                        <li><a href="">Refund Policy</a></li>
+                        <li><a href="">Delivery information</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="information bg-footer1">
+                    <b class="title-footer">Information</b>
+                    <ul class="list">
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Testimonials</a></li>
+                        <li><a href="">My Account</a></li>
+                        <li><a href="">Payments & Returns</a></li>
+                        <li><a href="">View Catalogues Online</a></li>
+                        <li><a href="">Our Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            
+        </div>
+    </div>
+    <div id="trang_ct_block" class="trang_ct_class">
+        <div class="trang_ct">
+            <div><a href="#" id="Exit">X</a></div>
+            <div class="title_sp">
+                <h2><p>TISSOT T065.430.16.051.00</p></h2>
+            </div>
+            <div class="ct_sp">
+                <div class="img_sp">
+                    <img src="./sanpham/Nam/48_BI1050-81A-1-399x399.webp" alt="">
+                    <div class="list-img-sp">
+                        <img src="./sanpham/Nam/CITIZEN-BI1050-81A-0-399x399.webp" alt="" class="mini_img">
+                        <img src="./sanpham/Nam/48_BI1050-81A-1-399x399.webp" alt="" class="mini_img">
+                        <img src="./sanpham/Nam/48_BI1050-81A-399x399.webp" alt="" class="mini_img">
+                    </div>
+                </div>
+    
+                <div class="inf_sp">
+                    <p>THÔNG TIN SẢN PHẨM</p>
+                    <div id="start-icon1">
+                        
+                    </div>
+                    <p>(3 đánh giá của khách hàng)</p>
+                    <p>Mã số sản phẩm : <p class="id_sp">BI1050-81A</p></p>
+                    <div id="price">
+                        <p class="price_load">3.000.000 ₫ </p>
+                        <p class="discount"> 2.000.000 ₫</p>
+                    </div>
+                    
+                    <p class="page_inf">Mẫu Citizen BI1050-81A mặt số tròn to nam tính, các vạch số cùng kim chỉ kiểu dáng mỏng tinh tế, chức năng lịch ngày được sắp xếp tạo nên vẻ độc đáo.</p>
+                    <button class="btn_add_in"><b>Thêm vào giỏ hàng</b></button>
+                </div>
+                <div class="brand">
+                    <div class="img_brand">
+                        <div class="img_brand_1">
+                            <p>THƯƠNG HIỆU</p>
+                            <img src="./sanpham/Nam/Citizen-Logo.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="guarantee">
+                        <p>MÔ TẢ SẢN PHẨM</p>
+                    </div>
+                    <div class="list_guarantee">
+                        
+                        <div class="guarantee_1">
+                            <div class="list_guarantee_1">
+                                <b>Thương Hiệu : </b> Fossil
+                            </div>
+                            <div class="list_guarantee_1">
+                                <b>Số Hiệu Sản Phẩm : </b> ME3167
+                            </div>
+                            <div class="list_guarantee_1">
+                                <b>Xuất Xứ : </b> Mỹ
+                            </div>
+                            <div class="list_guarantee_1">
+                                <b>Giới Tính : </b> Nam
+                            </div>
+                            <div class="list_guarantee_1">
+                                <b>Kính : </b>
+                            </div>
+                            <div class="list_guarantee_1">
+                                <b>Máy : </b>
+                            </div>
+                            <div class="list_guarantee_1">
+                                <b>Bảo Hành : </b>
+                            </div>
+                            <div class="list_guarantee_1">
+                                <b>Đường kính Mặt Số : </b>
+                            </div>
+                            <div class="list_guarantee_1">
+                                <b>Dây đeo : </b>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html> 

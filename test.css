@@ -1,0 +1,40 @@
+body{
+    display: flex;
+}
+.pro2{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.pro1:hover{
+    border: 2px solid tomato;
+}
+.pro1:hover + .pro2  {
+    opacity: 0.5;
+}
+.pro1{
+    margin-top: 100px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.pro4{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10;
+    left: 10;
+}
+.pro3:hover{
+    border: 2px solid tomato;
+}
+.pro3:hover + .pro4  {
+    opacity: 0.5;
+}
+.pro3{
+    margin-top: 100px;
+    margin-left: 10px;
+    position: relative;
+}

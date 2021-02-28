@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./ct_sp.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <script src="./web.js"></script>
+    <!-- Dang nhap - Dang ki tai khoan -->
+    <div id="sign-in-account" class="sign-in">
+        <div class="form-sign-in">
+            <a href="#" id="btn-exit"><b>X</b></a>
+            <div id="login">
+                <h2>Login</h2>
+            </div>
+            <div id="center">
+                <div class="username">
+                    Username :
+                    <input type="text">
+                </div>
+                <div class="password">
+                    Password :
+                    <input type="text">
+                </div>
+                <div id="btn">    
+                    <i><a href="">Chưa có tài khoản ?</a></i>
+                    <div id="btn-login">
+                    
+                    <button><b>Login</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <div class="header">
+        <!-- Navigation bar -->
+        <div class="navigation-bar">
+            
+            <div class="task">
+                <div class="task1">
+                    <i class="fas fa-user-circle"></i>
+                    <a href="#sign-in-account">REGISTER or SIGN IN</a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="logo">
+                    <p>LOGO</p>
+                </div>
+                <div class="infor">
+                    <input type="text" placeholder=" ENTER YOUR KEYWORD " class="search">
+                    <div class="inform">
+                        <i class="fas fa-phone-square icon-call"></i>
+                        <div class="call-me">
+                            <b>800-140-1000s</b>
+                            <p>Mon-Fri: 8:00-17:00</p>
+                        </div>
+                        <div class="icon-heart-shopping">
+                            <i class="fas fa-heart icon"></i>
+                            <i class="fas fa-shopping-basket icon icon-relative"></i>
+                            <i class="fas fa-circle icon-circle"></i>
+                            <!-- So luong mua hang -->
+                            <div id="number"><b>10</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-l">
+                
+                <div class="head-navigation">
+                    <b class="category">
+                        <span class="fas fa-align-left"></span>
+                        <span class="category-n"><b>THƯƠNG HIỆU</b></span> 
+                    </b>
+                    
+                    <div class="dropdown-navigationbar">
+                        <!-- dung js de ra cac thuong hieu -->
+                        <script> dropdown_navigation_bar(); </script>    
+                    </div>
+                    
+                </div>
+                    <div class="navigation-list-first">
+                        <h4><a href="./web.html">TRANG CHỦ</a></h4>
+                    </div>
+                <script>navigation_l();</script>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
