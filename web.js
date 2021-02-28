@@ -1627,7 +1627,7 @@ function Load_Head()
 function Load_Body()
 {
     document.getElementById("link_css").href = "";
-    document.getElementById("link_css").href = "http://127.0.0.1:5500/web-designer/web.css";
+    document.getElementById("link_css").href = "./web.css";
     document.getElementById("body").innerHTML ="";
     document.getElementById("body").innerHTML += `
     <div class="trang_chu">
@@ -1876,7 +1876,7 @@ function Load_Number_sort(number){
 function Load_Page_All_Products(name)//theo gender
 {
     document.getElementById("link_css").href = "";
-    document.getElementById("link_css").href = "http://127.0.0.1:5500/web-designer/web_listsp.css";
+    document.getElementById("link_css").href = "./web_listsp.css";
     document.getElementById("body").innerHTML = "";
     document.getElementById("body").innerHTML +=`
     <div id="title"> 
