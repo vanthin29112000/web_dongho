@@ -5,7 +5,7 @@ function dropdown_navigation_bar(){
     {
         document.getElementsByClassName("dropdown-navigationbar")[0].innerHTML += `<div class="car"><p>`+i+`</p></div>`;
     }    
-} 
+}
 // navigation-l
 function dropdown(a,stt)
 {
@@ -62,22 +62,40 @@ let arr_navigation = [
 // hjhj
 function navigation_l(){
     let a = 1;
+    let count = 1; 
     for(let i of arr_navigation)
     {
         let title = i.name;
-
-        document.getElementsByClassName("navigation-l")[0].innerHTML += 
-        `<b onclick= Load_Page_All_Products("`+i.name+`"); class="navigation-list-first">
-        <div >
-            <p><h4 class="img-next">`+i.name+`</h4></p>
-            <div class="dropdown-navigationbar">
+        if(count <= 3)
+        {
+            document.getElementsByClassName("navigation-l")[0].innerHTML += 
+            `<b onclick= "Load_Page_All_Products('`+i.id+`')" class="navigation-list-first">
+            <div >
+                <p><h4 class="img-next">`+i.name+`</h4></p>
+                <div class="dropdown-navigationbar">
+                </div>
+            
             </div>
-        
-        </div>
-        </b>
-        `;
-        dropdown(i,a);
-        a++;
+            </b>
+            `;
+            dropdown(i,a);
+            a++;
+        }
+        else{
+            document.getElementsByClassName("navigation-l")[0].innerHTML += 
+            `<b class="navigation-list-first">
+            <div >
+                <p><h4 class="img-next">`+i.name+`</h4></p>
+                <div class="dropdown-navigationbar">
+                </div>
+            
+            </div>
+            </b>
+            `;
+            dropdown(i,a);
+            a++;
+        }
+        count ++;
     }
 }
 //#region Brands
@@ -85,59 +103,59 @@ function navigation_l(){
         {
             id : "casio",
             name_brand : "Casio",
-            gender : "Nam"
+            gender : "nam"
         },
         {
             id : "citizen",
             name_brand : "Citizen",
-            gender : "Nam"
+            gender : "nam"
         }
         ,
         {
             id : "OP",
             name_brand : "Olym Pianus (Olympia Star)",
-            gender : "Nam"
+            gender : "nam"
         }
         ,{
             id : "doxa",
             name_brand : "Doxa",
-            gender : "Nam"
+            gender : "nam"
         }
         ,{
             id : "tissot",
             name_brand : "Tissot",
-            gender : "Nam"
+            gender : "nam"
         }
         ,{
             id : "logines",
             name_brand : "Logines",
-            gender : "Nam"
+            gender : "nam"
         }
         ,
         {
             id : "saga_nu",
             name_brand : "Saga",
-            gender : "Nữ"
+            gender : "nu"
         },
         {
             id : "casio_nu",
             name_brand : "Casio",
-            gender : "Nữ"
+            gender : "nu"
         },
         {
             id : "fouettle_nu",
             name_brand : "Fouettlé",
-            gender : "Nữ"
+            gender : "nu"
         },
         {
             id : "citizen_nu",
             name_brand : "Citizen",
-            gender : "Nữ"
+            gender : "nu"
         },
         {
             id : "doxa_nu",
             name_brand : "Doxa",
-            gender : "Nữ"
+            gender : "nu"
         }
 ];
 function Load_brands(product,vitri)
@@ -190,252 +208,18 @@ function Find_Brand(name_brand)
             return brand_products.img;
     }
 }
-let products = [
-    {
-        id : "1",
-        name : "CASIO EFR-526L-1AVUDF",
-        brand : "Casio",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nam",
-        so_luong : 3,
-        img_list : ["./sanpham/Nam/Casio/nam_1.webp","./sanpham/Nam/Casio/nam_1.1.webp","./sanpham/Nam/Casio/nam_1.2.webp"],
-        value : 3196000,
-        discount : 0,
-        price : 3196000,
-        kinh : "Cứng",
-        may : "Quartz",
-        bao_hanh : "1 Năm",
-        duong_kinh : "43.8mm",
-        day : "Da",
-        inf : "Đồng hồ Casio EFR-526L-1AVUDF có vỏ kim loại bằng chất liệu thép không gỉ tinh tế, kim chỉ và vạch số được phủ phản quang nổi bật trên nền số màu đen mạnh mẽ, có ô lịch ngày vị trí 3h, dây đeo da màu đen có vân đem lãi vẻ lịch lãm.",
-        vote : 5,
-        comment : []
-    }
-    ,
-    {
-        id : "2",
-        name : "CASIO MTP-1384L-1AVDF",
-        brand : "Casio",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nam",
-        so_luong : 4,
-        img_list : ["./sanpham/Nam/Casio/nam_2.webp","./sanpham/Nam/Casio/nam_2.1.webp","./sanpham/Nam/Casio/nam_2.2.webp"],
-        value : 1974000,
-        discount : 5,
-        price : 1974000 - 1974000*(5/100),
-        kinh : "Cứng",
-        may : "Quartz",
-        bao_hanh : "1 Năm",
-        duong_kinh : "41mm",
-        day : "Da",
-        inf : "Đồng hồ Casio MTP-1384L-1AVDF với mặt đồng hồ tròn truyền thống, màu đồng của kim chỉ và vạch chỉ giờ cùng niềng sang trọng, nổi bật trên nền đen mặt số, dây đeo da nâu thanh lịch, lịch lãm.",
-        vote : 5,
-        comment : []
-    }
-    ,
-    {
-        id : "3",
-        name : "CITIZEN BU2026-65H",
-        brand : "Citizen",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nam",
-        so_luong : 5,
-        img_list : ["./sanpham/Nam/Casio/nam_3.webp","./sanpham/Nam/Casio/nam_3.1.webp","./sanpham/Nam/Casio/nam_3.2.webp"],
-        value : 13800000,
-        discount : 0,
-        price : 13800000,
-        kinh : "Cứng",
-        may : "Năng Lượng Ánh Sáng",
-        bao_hanh : "1 Năm",
-        duong_kinh : "43mm",
-        day : "Da",
-        inf : "Đồng hồ Citizen BU2026-65H có mặt số tròn lớn với viền kim loại bo tròn tinh tế quanh nền số màu đen mạnh mẽ, kim chỉ và vạch số sắc nét nổi bật, dây đeo demi vàng hồng cho phái mạnh.",
-        vote : 5,
-        comment : []
-    },
-    {
-        id : "4",
-        name : "CITIZEN NH8363-14H",
-        brand : "Citizen",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nam",
-        so_luong : 2,
-        img_list : ["./sanpham/Nam/Casio/nam_4.webp","./sanpham/Nam/Casio/nam_4.1.webp","./sanpham/Nam/Casio/nam_4.2.webp"],
-        value : 5780000,
-        discount : 15,
-        price : 5780000 - 5780000*(15/100),
-        kinh : "Cứng",
-        may : "Automatic",
-        bao_hanh : "1 Năm",
-        duong_kinh : "41mm",
-        day : "Da",
-        inf : "Đồng hồ nam Citizen NH8363-14H với phong cách cổ điển dành cho nam, kim chỉ và chữ số mạ vàng sang trọng nổi bật trên nền đen nam tính, kết hợp cùng với dây đeo bằng da nâu tạo vẻ sang trọng hoài cổ cho phái nam.",
-        vote : 5,
-        comment : []
-    }
-    ,
-    {
-        id : "5",
-        name : "OP 990-17AMS-T",
-        brand : "Olym Pianus (Olympia Star)",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nam",
-        so_luong : 3,
-        img_list : ["./sanpham/Nam/Casio/nam_5.webp","./sanpham/Nam/Casio/nam_5.1.webp","./sanpham/Nam/Casio/nam_5.2.webp"],
-        value : 4050000,
-        discount : 9,
-        price : 4050000 - 4050000*(9/100),
-        kinh : "Cứng",
-        may : "Automatic",
-        bao_hanh : "1 Năm",
-        duong_kinh : "42mm",
-        day : "Thép Không Gỉ",
-        inf : "Đồng hồ Olym Pianus (Olympia Star) 990-17AMS-T có vỏ và dây đeo kim loại màu bạc sáng bóng, kim chỉ và vạch số độc đáo nổi bật trên nền số màu trắng trang nhã, tạo nên phụ kiện thời trang sang trọng.",
-        vote : 5,
-        comment : []
-    }
-    ,
-    {
-        id : "6",
-        name : "OP 58092MSK-T",
-        brand : "Olym Pianus (Olympia Star)",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nam",
-        so_luong : 2,
-        img_list : ["./sanpham/Nam/Casio/nam_6.webp","./sanpham/Nam/Casio/nam_6.1.webp","./sanpham/Nam/Casio/nam_6.2.webp"],
-        value : 3250000,
-        discount : 50,
-        price : 3250000 - 3250000*(50/100),
-        kinh : "Sapphire",
-        may : "Quartz",
-        bao_hanh : "2 Năm",
-        duong_kinh : "38mm",
-        day : "Thép Không Gỉ",
-        inf : "Đồng hồ Olym Pianus (Olympia Star) 58092MSK-T kích thước mặt số tròn to nam tính, dưới lớp kính Sapphire nổi bật với kim chỉ giây thiết kế kiểu không đồng trục tách ra 1 ô riêng biệt.",
-        vote : 5,
-        comment : []
-    }
-    ,{
-        id : "7",
-        name : "SAGA 53375 SVMWBL-2",
-        brand : "Saga",
-        Xuat_xu : "Mỹ",
-        gender: "Nữ",
-        so_luong : 3,
-        img_list : ["./sanpham/Nam/Casio/nu_1.webp","./sanpham/Nam/Casio/nu_1.1.webp"],
-        value : 11709000,
-        discount : 20,
-        price : 11709000 - 11709000*(20/100),
-        kinh : "Sapphire ",
-        may : "Quartz",
-        bao_hanh : "2 Năm",
-        duong_kinh : "34mm",
-        day : "Da",
-        inf : "Mẫu Saga 53375 SVMWBL-2 phiên bản đính đá Swarovski sang trọng trên nền mặt số size 34mm tone màu trắng xà cừ thời trang trẻ trung dành cho phái đẹp.",
-        vote : 5,
-        comment : []
-    }
-    ,{
-        id : "8",
-        name : "SAGA 80737 RGMRRG-2L",
-        brand : "Saga",
-        Xuat_xu : "Mỹ",
-        gender: "Nữ",
-        so_luong : 4,
-        img_list : ["./sanpham/Nam/Casio/nu_2.webp","./sanpham/Nam/Casio/nu_2.1.webp"],
-        value : 5624000,
-        discount : 10,
-        price : 5624000 - 5624000*(10/100),
-        kinh : "Cứng",
-        may : "Quartz",
-        bao_hanh : "2 Năm",
-        duong_kinh : "20mm",
-        day : "Thép Không Gỉ",
-        inf : "Mẫu Saga 80737 RGMRRG-2L mặt số vuông tone màu đỏ xà cừ kết hợp cùng thiết kế đơn giản 2 kim thời trang trẻ trung cho phái đẹp.",
-        vote : 5,
-        comment : []
-    }
-    ,{
-        id : 9,
-        name : "SAGA 53482 TTRSVTTR-2",
-        brand : "Saga",
-        Xuat_xu : "Mỹ",
-        gender: "Nữ",
-        so_luong : 4,
-        img_list : ["./sanpham/Nam/Casio/nu_3.webp","./sanpham/Nam/Casio/nu_3.1.webp","./sanpham/Nam/Casio/nu_3.2.webp"],
-        value : 4104000,
-        discount : 17,
-        price : 4104000 - 4104000*(17/100),
-        kinh : "Cứng",
-        may : "Quartz",
-        bao_hanh : "2 Năm",
-        duong_kinh : "27mm",
-        day : "Thép Không Gỉ",
-        inf : "Mẫu Saga 53482 TTRSVTTR-2 phiên bản đính đá pha lê Swarovski thời trang sang trọng trên chi tiết vỏ viền đồng hồ kết hợp thiết kế trẻ trung đơn giản chức năng 3 kim.",
-        vote : 5,
-        comment : []
-    }
-    ,{
-        id : 10,
-        name : "CASIO SHE-4505SG-7ADR",
-        brand : "Casio",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nữ",
-        so_luong : 3,
-        img_list : ["./sanpham/Nam/Casio/nu_4.webp","./sanpham/Nam/Casio/nu_4.1.jpg","./sanpham/Nam/Casio/nu_4.2.jpg"],
-        value : 6862000,
-        discount : 13,
-        price : 6862000 - 6862000*(13/100),
-        kinh : "Sapphire",
-        may : "Quartz",
-        bao_hanh : "1 Năm",
-        duong_kinh : "30.6mm",
-        day : "Thép Không Gỉ",
-        inf : "Đồng hồ Casio SHE-4505SG-7ADR thiết kế dành cho nữ, kim chỉ và vạch số thiết kế thời trang kết hợp với dây đeo kim loại mạ bạc như 1 phụ kiện thời trang cho các bạn nữ.",
-        vote : 5,
-        comment : []
-    }
-    ,{
-        id : 11,
-        name : "CASIO SHE-3043SG-7AUDR",
-        brand : "Casio",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nữ",
-        so_luong : 9,
-        img_list : ["./sanpham/Nam/Casio/nu_5.webp","./sanpham/Nam/Casio/nu_5.1.webp","./sanpham/Nam/Casio/nu_5.2.jpg"],
-        value : 6486000,
-        discount : 10,
-        price : 6486000 - 6486000*(10/100),
-        kinh : "Cứng",
-        may : "Quartz",
-        bao_hanh : "1 Năm",
-        duong_kinh : "30.6mm",
-        day : "Thép Không Gỉ",
-        inf : "Đồng hồ Casio SHE-4505SG-7ADR thiết kế dành cho nữ, kim chỉ và vạch số thiết kế thời trang kết hợp với dây đeo kim loại mạ bạc như 1 phụ kiện thời trang cho các bạn nữ.",
-        vote : 5,
-        comment : []
-    }
-    ,{
-        id : 12,
-        name : "CASIO SHE-3511SG-7AUDR",
-        brand : "Casio",
-        Xuat_xu : "Nhật Bản",
-        gender: "Nữ",
-        so_luong : 4,
-        img_list : ["./sanpham/Nam/Casio/nu_6.webp","./sanpham/Nam/Casio/nu_6.1.webp","./sanpham/Nam/Casio/nu_6.2.jpg"],
-        value : 6040000,
-        discount : 15,
-        price : 6040000 - 6040000*(15/100),
-        kinh : "Sapphire",
-        may : "Quartz",
-        bao_hanh : "1 Năm",
-        duong_kinh : "35.2mm",
-        day : "Thép Không Gỉ",
-        inf : "Mẫu Casio SHE-3511SG-7AUDR nổi bật với phiên bản mặt kính chất liệu Sapphire với size mặt 35mm, mặt số gia công tinh xảo đính 8 viên pha lê tạo nên vẻ đẹp thời trang.",
-        vote : 5,
-        comment : []
-    }
-]
+let products = [];
+//load product
+function Load_data_product_in_firestore(){
+    db.collection("products").get().then((product)=>{
+        product.forEach((item)=>{
+            products.push(item.data());
+        })
+    });
+}
+
+Load_data_product_in_firestore();
+
 function Load_Product_Brand(a,brand,gender,vitri,nameclass)
 {
     document.getElementsByClassName(nameclass)[vitri].innerHTML ="";
@@ -456,7 +240,7 @@ function Load_Product_Brand(a,brand,gender,vitri,nameclass)
         if(i.brand == brand && i.gender == gender)
         {
             document.getElementsByClassName(nameclass)[vitri].innerHTML += 
-        `<a href="#trang_ct_block" class="sp-cartide-1" id="`+i.id+`" onclick="CT_Product(`+i.id+`)">
+        `<a href="#trang_ct_block" class="sp-cartide-1" id="`+i.id+`" onclick="CT_Product('`+i.id+`')">
         <div class="sp-cartide-bg">
             <img src="`+ i.img_list[0]+`" alt="">
             <p>`+i.name+`</p>
@@ -481,6 +265,7 @@ function Load_Product_Brand(a,brand,gender,vitri,nameclass)
         }
     }
 }
+
 function load_product(a,gender,vitri,nameclass){//so luong san pham gioi tinh, vi tri, ten class
     let s = 0;
     let sl = parseInt(a);//so luong san pham
@@ -500,7 +285,7 @@ function load_product(a,gender,vitri,nameclass){//so luong san pham gioi tinh, v
         if(i.gender == gender)
         {
             document.getElementsByClassName(nameclass)[vitri].innerHTML += 
-        `<a href="#trang_ct_block" class="sp-cartide-1" id="`+i.id+`" onclick="CT_Product(`+i.id+`)">
+        `<a href="#trang_ct_block" class="sp-cartide-1" id="`+i.id+`" onclick="CT_Product('`+i.id+`')">
         <div class="sp-cartide-bg">
             <img src="`+ i.img_list[0]+`" alt="">
             <p>`+i.name+`</p>
@@ -584,15 +369,10 @@ function CT_Product_Exit()
 }
 function CT_Product(id)
 {
-    let a = parseInt(id);
     document.getElementById("inf_product").innerHTML = "";
-    for(product of products)
-    {
-        console.log("hello")
-        if(product.id == a)
-        {
-
-            document.getElementById("inf_product").innerHTML +=
+    db.collection("products").doc(id).get().then((data)=>{
+        let product = data.data();
+        document.getElementById("inf_product").innerHTML +=
             `<div><p id="Exit" onclick="CT_Product_Exit()"></p></div>
             <div class="title_sp">
                 <h2><p id = "product_name">`+product.name+`</p></h2>
@@ -622,7 +402,7 @@ function CT_Product(id)
                     </div>
                     
                     <p class="page_inf">`+product.inf+`</p>
-                    <button class="btn_add_in"  onclick = "add_giohang()"><b>Thêm vào giỏ hàng</b></button>
+                    
                 </div>
                 <div class="brand">
                     <div class="img_brand">
@@ -669,91 +449,82 @@ function CT_Product(id)
                 </div>
             </div>
         </div>`;
+
+        if(product.so_luong != 0)
+        {
+            document.getElementsByClassName("inf_sp")[0].innerHTML += `<button class="btn_add_in"  onclick = "add_giohang('`+product.id+`',`+product.so_luong+`,`+product.price+`)"><b>Thêm vào giỏ hàng</b></button>`;
+        }
+        else{
+            document.getElementsByClassName("inf_sp")[0].innerHTML += `<p class="Sold_out">Đã hết hàng</p>`;
+        }
         start_vote1("start-icon1");
         Load_discount(product.value,product.discount);
         return;
-        }
-    }
+    })
+    
 }
 //#endregion
 
 //#region xac nhan
-function add_giohang()
+function add_giohang(id_product,so_luong,price)
 {
-    let name = document.getElementById("sign_in_and_login").innerHTML;
-    if(name == "REGISTER or SIGN IN")
+    if(auth.currentUser == null)
     {
         alert("Bạn chưa đăng nhập");
         return;
     }
     else{
-        for(let account of account_infs)
-        {
-            if(account.username == name)
+        db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((user)=>{
+            let user_data ;
+            user.forEach((data)=>{
+                user_data = data;
+            });
+            var temp_giohang = user_data.data().gio_hang;
+            let flag = true;
+            for(let product of temp_giohang)
             {
-                let product_name = document.getElementById("product_name").innerHTML;
-                for(let product of account.gio_hang)
+                if(product.id == id_product)
                 {
-                    if(product.name == product_name)
+                    if(so_luong >= product.so_luong + 1)
                     {
-                        for(let a of products)
-                        {
-                            if(a.name == product.name)
-                            {
-                                if(product.so_luong < a.so_luong)
-                                {
-                                    console.log(a.so_luong)
-                                    product.so_luong++;
-                                    alert("them gio hang thanh cong!!!");
-                                    return;
-                                }
-                                else{
-                                    alert("Không đủ số lượng trong kho !!! ");
-                                    return;
-                                }
-                                
-                            }
-                            
-                        }
+                        product.so_luong ++;
+                        flag = false;
+                        break;
                     }
-                }
-                {
-                    for(let product of products)
-                    {
-                        if(product.name == product_name)
-                        {
-                            let tam = 0;
-                            for(let b of account.gio_hang)
-                            {
-                                if(b.name == product_name)
-                                {
-                                    tam = b.so_luong;
-                                    console.log(tam);
-                                }
-                            }
-                            if(product.so_luong - tam> 0)
-                            {
-                                let a = {
-                                    name : product_name,
-                                    so_luong : 1
-                                }
-                                account.gio_hang.push(a);
-                                alert("them gio hang thanh cong!!!");
-                                return;
-                            }
-                            else{
-                                alert("Không đủ số lượng trong kho!!!");
-                                return;
-                            }
-                        }
+                    else{
+                        alert("Vượt quá số lượng trong kho hàng !!!");
+                        return;
                     }
-                    
                 }
             }
-        }
+            
+            if(flag == true)
+            {
+                if(so_luong != 0)
+                {
+                    let temp_product = {
+                        id : id_product,
+                        so_luong : 1,
+                        value : price
+                    }
+                    temp_giohang.push(temp_product);
+                }
+                else
+                {
+                    alert("Vượt quá số lượng trong kho hàng !!!");
+                    return;
+                }
+            }
+            db.collection("customer").doc(user_data.id).update({
+                gio_hang : temp_giohang
+            })
+            .then(()=>{
+                alert("Thêm giỏ hàng thành công !!!");
+            })
+
+        });
     }
 }
-
 //#endregion
 
 //#region  tao ra ngoi sao
@@ -790,7 +561,7 @@ function load_product_sorted(vitri,nameclass){//so luong san pham gioi tinh, vi 
             value_string = add_String(i.value);
         }
             document.getElementsByClassName(nameclass)[vitri].innerHTML += 
-        `<a href="#trang_ct_block" class="sp-cartide-1" id="`+i.id+`" onclick="CT_Product(`+i.id+`)">
+        `<a href="#trang_ct_block" class="sp-cartide-1" id="`+i.id+`" onclick="CT_Product('`+i.id+`')">
         <div class="sp-cartide-bg">
             <img src="`+ i.img_list[0]+`" alt="">
             <p>`+i.name+`</p>
@@ -1019,59 +790,59 @@ let floags = [
             {
                 id : "casio",
                 name_brand : "Casio",
-                gender : "Nam"
+                gender : "nam" //test
             },
             {
                 id : "citizen",
                 name_brand : "Citizen",
-                gender : "Nam"
+                gender : "nam"
             }
             ,
             {
                 id : "OP",
                 name_brand : "Olym Pianus (Olympia Star)",
-                gender : "Nam"
+                gender : "nam"
             }
             ,{
                 id : "doxa",
                 name_brand : "Doxa",
-                gender : "Nam"
+                gender : "nam"
             }
             ,{
                 id : "tissot",
                 name_brand : "Tissot",
-                gender : "Nam"
+                gender : "nam"
             }
             ,{
                 id : "logines",
                 name_brand : "Logines",
-                gender : "Nam"
+                gender : "nam"
             }
             ,
             {
                 id : "saga_nu",
                 name_brand : "Saga",
-                gender : "Nữ"
+                gender : "nu"
             },
             {
                 id : "casio_nu",
                 name_brand : "Casio",
-                gender : "Nữ"
+                gender : "nu"
             },
             {
                 id : "fouettle_nu",
                 name_brand : "Fouettlé",
-                gender : "Nữ"
+                gender : "nu"
             },
             {
                 id : "citizen_nu",
                 name_brand : "Citizen",
-                gender : "Nữ"
+                gender : "nu"
             },
             {
                 id : "doxa_nu",
                 name_brand : "Doxa",
-                gender : "Nữ"
+                gender : "nu"
             }
     ]
     }
@@ -1316,7 +1087,11 @@ function Load_brands_gender(gender,id_sort)
                 {
                     if(title.gender == gender)
                     {
-                        document.getElementById(id_sort).innerHTML += `<div class = "check check_brand"><input type="checkbox"  id="`+title.id+`" class = "brand_check" onclick = "Load_product_brand_sort('`+title.id+`','`+floag.id+`')"> `+title.name_brand+` </input></div>`;
+                        document.getElementById(id_sort).innerHTML += `
+                        <div class = "check check_brand">
+                            <input type="checkbox"  id="`+title.id+`" class = "brand_check" onclick = "Load_product_brand_sort('`+title.id+`','`+floag.id+`')"> </input>
+                            <label for="`+title.id+`"> `+title.name_brand+`</label>
+                        </div>`;
                     }
                 }
             }
@@ -1325,13 +1100,21 @@ function Load_brands_gender(gender,id_sort)
             {
                 for(let title of floag.array)
                 {
-                    document.getElementById(id_sort).innerHTML += `<div class = "check check_value"><input type="checkbox"  id="`+title.id+`" class = "value_check" onclick = "Load_product_brand_sort('`+title.id+`','`+floag.id+`')"> `+add_String(title.from)+` - `+add_String(title.to)+`  </input></div>`;
+                    document.getElementById(id_sort).innerHTML += `
+                    <div class = "check check_value">
+                        <input type="checkbox"  id="`+title.id+`" class = "value_check" onclick = "Load_product_brand_sort('`+title.id+`','`+floag.id+`')"> </input>
+                        <label for="`+title.id+`"> `+add_String(title.from)+` - `+add_String(title.to)+` </label>
+                    </div>`;
                 }
             }
             else{
                 for(let title of floag.array)
                 {
-                    document.getElementById(id_sort).innerHTML += `<div class = "check check_`+floag.id+`"><input type="checkbox"  id="`+title.id+`" class = "`+floag.id+`_check" onclick = "Load_product_brand_sort('`+title.id+`','`+floag.id+`')"> `+title.name+` </input></div>`;
+                    document.getElementById(id_sort).innerHTML += `
+                    <div class = "check check_`+floag.id+`">
+                        <input type="checkbox"  id="`+title.id+`" class = "`+floag.id+`_check" onclick = "Load_product_brand_sort('`+title.id+`','`+floag.id+`')"></input>
+                        <label for="`+title.id+`">  `+title.name+`  </label>
+                    </div>`;
                 }
             }
             
@@ -1345,24 +1128,40 @@ function Load_brands_gender(gender,id_sort)
 let form_sign_ins = [
     {
         name : "User Name",
-        id : "username"
+        id : "username",
+        limit : 'placeholder="Tên đăng nhập" autocomplete="off" required',
+        type : "text"
     },
     {
         name : "PassWord",
-        id : "password" 
+        id : "password",
+        limit : 'minlength="6" placeholder="Mật khẩu" autocomplete="off" required',
+        type : "password" 
     }
     ,
     {
+        name : "Email",
+        id : "email",
+        limit : 'placeholder="Địa chỉ email" autocomplete="off" required',
+        type : "email"
+    },
+    {
         name : "Full Name",
-        id : "fullname"
+        id : "fullname",
+        limit : 'placeholder="Tên người dùng" autocomplete="off" required',
+        type : "text"
     },
     {
         name : "Phone Number",
-        id : "phonenumber"
+        id : "phonenumber",
+        limit : 'placeholder="Số điện thoại" autocomplete="off" onkeypress="return event.charCode >= 48 && event.charCode <= 57"',
+        type : "text"
     },
     {
         name : "Address",
-        id : "address"
+        id : "address",
+        limit : 'placeholder="Tên người dùng" autocomplete="off" required',
+        type : "text"
     }];
 
 function Form_sign_and_login(floag)
@@ -1373,11 +1172,11 @@ function Form_sign_and_login(floag)
         {
             if(i != 1)
             {
-                document.getElementById("text_box_account").innerHTML += `<input type="text" id="`+form_sign_ins[i].id+`">`;
+                document.getElementById("text_box_account").innerHTML += `<input type="text" id="`+form_sign_ins[i].id+`" placeholder="Tên đăng nhập" autocomplete="off" required>`;
             }
             else
             {
-                document.getElementById("text_box_account").innerHTML += `<input type="password" id="`+form_sign_ins[i].id+`">`;
+                document.getElementById("text_box_account").innerHTML += `<input type="password" id="`+form_sign_ins[i].id+`" minlength="6" placeholder="Mật khẩu" autocomplete="off" required>`;
             }
             document.getElementById("inf_account").innerHTML += `<p>`+form_sign_ins[i].name+` : </p>`;
             
@@ -1388,7 +1187,7 @@ function Form_sign_and_login(floag)
         for(let i = 0;i<form_sign_ins.length;i++)
         {
             document.getElementById("inf_account").innerHTML += `<p>`+form_sign_ins[i].name+` : </p>`;
-            document.getElementById("text_box_account").innerHTML += `<input type="text" id="`+form_sign_ins[i].id+`">`
+            document.getElementById("text_box_account").innerHTML += `<input type="`+form_sign_ins[i].type+`" id="`+form_sign_ins[i].id+`" `+form_sign_ins[i].limit +`>`
         }
     }
 }
@@ -1403,17 +1202,23 @@ function Form_sign_and_login_checked(floag)
             if(i!=1)
             document.getElementById("inf_account").innerHTML += `<p>`+form_sign_ins[i].name+` : </p>`;
         }
-        let user = document.getElementById("sign_in_and_login").innerHTML;
-        for(let account of account_infs)
+        if(auth.currentUser != null)
         {
-            if(account.username == user)
-            {
-                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+account.username+`" disabled>`;
-                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+account.fullname+`" disabled>`;
-                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+account.address+`" disabled>`;
-                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+account.phonenumber+`" disabled>`;
-            }
+            db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((data)=>{
+                let temp_user;
+                data.forEach((user)=>{
+                    temp_user = user.data();
+                })
+                // console.log(temp_user);//test
+                document.getElementById("TB").innerHTML = "";
+                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+temp_user.username+`" disabled>`;
+                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+temp_user.email+`" disabled>`;            
+                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+temp_user.fullname+`" disabled>`;
+                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+temp_user.address+`" disabled>`;
+                document.getElementById("text_box_account").innerHTML += `<input type="text" value="`+temp_user.phonenumber+`" disabled>`;
+            });
         }
+        
     }
 }
 
@@ -1421,8 +1226,8 @@ function Sign_and_login(number)
 {
     document.getElementById("sign-in-account").innerHTML = "";
     document.getElementById("sign-in-account").innerHTML += `
-    <div class="form-sign-in">
-            <a href="#" id="btn-exit"><b onclick="">X</b></a>
+    <form class="form-sign-in">
+            <a href="#" id="btn-exit"></a>
             <div id="login">
                 
             </div>
@@ -1433,25 +1238,25 @@ function Sign_and_login(number)
                 <div id ="TB">
                 </div>
             </div>
-            </div>
-        </div>
+    </form>
     `;
     if(number == 2) //Login
     {
-        document.getElementById("btn-exit").innerHTML = `<b onclick="Sign_and_login(2)">X</b>`;
+        document.getElementById("btn-exit").innerHTML = `<i class="far fa-times-circle" onclick="Sign_and_login(2)"></i>`;
         document.getElementById("login").innerHTML += `<h2>Login</h2>`;
         document.getElementById("center").innerHTML += `<div id="form">
         <div id="inf_account"></div>
         <div id="text_box_account"></div>`
         Form_sign_and_login(true);
-        document.getElementById("btn").innerHTML += `<i><b onclick="Sign_and_login(3)">Chưa có tài khoản ?</b></i>
+        document.getElementById("btn").innerHTML += `
         <div id="btn-login">
         <button><b onclick="Check_Account()">Login</b></button>
-        </div>`
+        </div>
+        <i><b onclick="Sign_and_login(3)">Chưa có tài khoản ?</b></i>`
     }
     else if(number == 3)//sign up
     {
-        document.getElementById("btn-exit").innerHTML = `<b onclick="Sign_and_login(2)">X</b>`;
+        document.getElementById("btn-exit").innerHTML = `<i class="far fa-times-circle" onclick="Sign_and_login(2)"></i>`;
         document.getElementById("login").innerHTML += `<h2>Sign Up</h2>`;
         document.getElementById("center").innerHTML += `<div id="form">
         <div id="inf_account"></div>
@@ -1463,7 +1268,7 @@ function Sign_and_login(number)
         </div>`
     }
     else{
-        document.getElementById("btn-exit").onlick = "Sign_and_login(4)";
+        document.getElementById("btn-exit").innerHTML = `<i class="far fa-times-circle" onclick="Sign_and_login(4)"></i>`;
         document.getElementById("login").innerHTML += `<h2>Thông Tin TK</h2>`;
         document.getElementById("center").innerHTML += `<div id="form">
         <div id="inf_account"></div>
@@ -1478,45 +1283,39 @@ function Sign_and_login(number)
 //#endregion
 
 //#region Check_sign_and login
-let account_infs = [
-    {
-        id : "1",
-        username : "vanthin",
-        password : "123",
-        fullname : "Phan Van Thin",
-        phonenumber : "123456789",
-        address : "123 nguyen",
-        gio_hang : [
-           
-        ],
-        style : "Admin" 
-    }
-]
-function Log_In_Account(user,pass)
-{
-    for(let account of account_infs)
-    {
-        if(account.username == user && account.password == pass)
-            return true;
-    }
-    return false;
-}
+
 function Check_Account()
 {
+    document.getElementById("TB").innerHTML = "";
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
-    if (Log_In_Account(user,pass) == true)
+
+    if(user != "" && pass != "" && pass.length >= 6)
     {
-        alert("đăng nhập thành công");
-        document.getElementById("sign_in_and_login").innerHTML = "";
-        document.getElementById("sign_in_and_login").innerHTML += user;
-        Sign_and_login(4);
-        admin();
+        db.collection("customer").where("username","==",user).get().then((user)=>{
+            let email_customer ;
+            user.forEach((data)=>{
+                email_customer = data.data().email;
+            })
+            auth.signInWithEmailAndPassword(email_customer, pass)
+            .then((userCredential) => {
+                alert("đăng nhập thành công");
+                document.getElementById("sign_in_and_login").innerHTML = "";
+                document.getElementById("sign_in_and_login").innerHTML += auth.currentUser.displayName;
+                Sign_and_login(4);
+                admin();
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorCode);
+                document.getElementById("TB").innerHTML = "";
+                document.getElementById("TB").innerHTML +=`<i>Sai tài khoản hoặc mật khẩu</i>`;
+            });
+        });
+        
     }
-    else{
-        document.getElementById("TB").innerHTML = "";
-        document.getElementById("TB").innerHTML +=`<i>Sai tài khoản hoặc mật khẩu</i>`;
-    }
+    
 }
 //#endregion
 
@@ -1526,6 +1325,7 @@ function Sign_out(){
     document.getElementById("sign_in_and_login").innerHTML += `REGISTER or SIGN IN`;
 
     Sign_and_login(2);
+    auth.signOut();
 }
 //#endregion
 
@@ -1537,28 +1337,64 @@ function Sign_In()
     let full = document.getElementById("fullname").value;
     let phone = document.getElementById("phonenumber").value;
     let address = document.getElementById("address").value;
-    for(let account of account_infs)
+    let email = document.getElementById("email").value;
+
+    if(user != "" && pass != "" && full != "" && phone != "" && address != "" && email != "")
     {
-        if(account.username == user)
-        {
-            document.getElementById("TB").innerHTML = "";
-            document.getElementById("TB").innerHTML +=`<i>Tên tài khoản đã tồn tại</i>`;
-            return;
-        }
+        db.collection("customer").where("username","==",user).get().then((temp_data)=>{
+            let temp_dem = 0;
+            temp_data.forEach((data)=>{
+                temp_dem++;
+            })
+    
+            if(temp_dem == 0){
+                db.collection("customer").where("email","==",email).get().then((data)=>{
+                    temp_dem =0;
+                    data.forEach((temp)=>{
+                        temp_dem++;
+                    })
+                    if(temp_dem == 0 )
+                    {
+                        console.log("hello");
+                        db.collection("customer").doc().set({
+                            username : user,
+                            password : pass,
+                            email : email,
+                            fullname : full,
+                            phonenumber : phone,
+                            address : address,
+                            gio_hang : [],
+                            style : "customer",
+                            date_submitted : new Date()
+                        }).then((docRef)=>{
+                            console.log(docRef);
+                            auth.createUserWithEmailAndPassword(email,pass).then((userCredential)=>{
+                                //login
+                                auth.currentUser.updateProfile({
+                                    displayName: user
+                                });
+                            })
+                            auth.signOut();
+                            alert("Đăng kí thành công");
+                            Sign_and_login(2);
+                        }).catch((error)=>{
+                            console.log(error);
+                        })
+                    }
+                    else{
+                        document.getElementById("TB").innerHTML = "";
+                        document.getElementById("TB").innerHTML +=`<i>Email đã được dùng</i>`;
+                        return;
+                    }
+                })
+            }
+            else{
+                document.getElementById("TB").innerHTML = "";
+                document.getElementById("TB").innerHTML +=`<i>Tên tài khoản đã tồn tại</i>`;
+                return;
+            }
+        })
     }
-    let object_account = {
-        id : account_infs.length,
-        username : user,
-        password : pass,
-        fullname : full,
-        phonenumber : phone,
-        address : address,
-        gio_hang : [],
-        style : ""
-    }
-    alert("Đăng kí thành công");
-    account_infs.push(object_account);
-    Sign_and_login(2);
 }
 //#endregion
 
@@ -1618,6 +1454,12 @@ function Load_Head()
         </div>
         
         `;
+        
+        if(auth.currentUser != null)
+        {
+            document.getElementById("sign_in_and_login").innerHTML = auth.currentUser.displayName;
+        }
+
         navigation_l();
         dropdown_navigation_bar();
 }
@@ -1677,7 +1519,7 @@ function Load_Body()
         </div>
         <span class="Sort_product"></span>
         <script></script>
-        <i class="fas fa-chevron-circle-right size_next" onclick = "Load_Page_All_Products('Nam');"></i>
+        <i class="fas fa-chevron-circle-right size_next" onclick = "Load_Page_All_Products('nam');"></i>
     </div> 
     <div class="sp-cartide">
         <div class="sp-cartide-l">
@@ -1698,14 +1540,14 @@ function Load_Body()
 
         </span>
         <script></script>
-        <i class="fas fa-chevron-circle-right size_next" onclick = "Load_Page_All_Products('Nữ');"></i>
+        <i class="fas fa-chevron-circle-right size_next" onclick = "Load_Page_All_Products('nu');"></i>
 </div>
 
 <div id="gio_hang"></div>`;
-Load_brands("Nam",0);
-load_product(3,"Nam",0,"Sort_product");
-Load_brands("Nữ",1);
-load_product(3,"Nữ",1,"Sort_product");
+Load_brands("nam",0);
+load_product(3,"nam",0,"Sort_product");
+Load_brands("nu",1);
+load_product(3,"nu",1,"Sort_product");
 }
 //#endregion
 
@@ -1800,6 +1642,17 @@ function Load_Trang_Chu()
 {
     document.getElementById("main").innerHTML = "";
     document.getElementById("main").innerHTML += `<!-- Dang nhap - Dang ki tai khoan -->
+    <div class="confirm-accepted"></div>
+    <div id="List-order-incart"></div>
+    <div class="option">
+      <i class="fas fa-plus-circle plus_incart"></i>
+      <div class="drop_option">
+        <div class="shopping-cart" onclick = "Load_list_order()">
+            <img src="./img/shopping-cart.png" alt="">
+          <p>Đơn hàng</p>
+        </div>
+      </div>
+    </div>
     <div id="sign-in-account" class="sign-in"></div>
     <!-- Header -->
     <div class="header"></div>
@@ -1815,7 +1668,12 @@ function Load_Trang_Chu()
             </div>
         </div>
     </div>`;
-    Sign_and_login(2);
+    if(auth.currentUser != null){
+        Sign_and_login(4);
+    }
+    else{
+        Sign_and_login(2);
+    }
     Load_Head();
     Load_Body();
     Load_Footer();
@@ -1829,11 +1687,11 @@ function Load_Title_Inf_Product(name)
 {
     for(let i of arr_navigation)
     {
-        if(i.name == name)
+        if(i.id == name)
         {
             document.getElementsByClassName("page_inf")[0].innerHTML += `<img src="`+i.img+`" alt="" class="img-banner" >
             <p><i>`+i.intro+`</i></p>`;
-            document.getElementById("title").innerHTML += `<b>Đồng Hồ `+name+`</b>`;
+            document.getElementById("title").innerHTML += `<b>Đồng Hồ `+i.name+`</b>`;
             return;
         }
     }
@@ -1873,7 +1731,7 @@ function Load_Number_sort(number){
 //#endregion 
 
 //#region Load_page_all_products
-function Load_Page_All_Products(name)//theo gender
+function Load_Page_All_Products(id)//theo gender
 {
     document.getElementById("link_css").href = "";
     document.getElementById("link_css").href = "./web_listsp.css";
@@ -1921,9 +1779,9 @@ function Load_Page_All_Products(name)//theo gender
         </ul>
     </div>
     <div id="gio_hang"></div>`;
-    Load_Sort(name);
-    Load_Title_Inf_Product(name);
-    Load_kq(name);
+    Load_Sort(id);
+    Load_Title_Inf_Product(id);
+    Load_kq(id); 
 }
 //#endregion
 
@@ -1936,20 +1794,18 @@ function Exit_giohang()
 
 function Load_giohang()
 {
-    
-    let user = document.getElementById("sign_in_and_login").innerHTML;
-    if(user != "REGISTER or SIGN IN")
+    if(auth.currentUser != null)
     {
-        document.getElementById("gio_hang").style.display = "block";
-        for(let account of account_infs)
-        {
-            if(account.username == user)
-            {
-                console.log(account.gio_hang);
-                Load_list_giohang(account.gio_hang);
-                return;
-            }
-        }
+        document.getElementById("gio_hang").style.display = "flex";
+        db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((list)=>{
+            let account;
+
+            list.forEach((user)=>{
+                account = user.data();
+            });
+            Load_list_giohang(account.gio_hang);
+            return;
+        })
     }
     else{
         alert("ban chưa có đăng nhập !!!");
@@ -1971,65 +1827,77 @@ function Load_discount_giohang(value,price,vitri)
     }
 }
 
-function Load_soluong_tang(vitri,vitri2,value,name)
+function Load_soluong_tang(vitri,vitri2,value,id)
 {
-    let user = document.getElementById("sign_in_and_login").innerHTML;
     let a = parseInt(document.getElementById(vitri).value);
-    for(let product of products)
-    {
-        if(product.name == name)
-        {
-            if(product.so_luong > a)
-            {
-                a ++;
-                document.getElementById(vitri).value = '';
-                document.getElementById(vitri).value = a;
-                for(let account of account_infs)
-                {
-                    if(account.username == user)
-                    for(let product of account.gio_hang)
-                    {
-                        if(product.name == name)
-                        {
-                            product.so_luong = a;
-                            break;
-                        }
-                    }
-                }
-                Load_value_giohang(vitri,vitri2,value);
-            }
-            else{
-                alert("không đủ sồ lượng trong kho");
-            }
-        }
 
-    }
-    
+    db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((data)=>{
+        let user_temp;
+        data.forEach((user)=>{
+            user_temp = user;
+        })
+        let temp_giohang = user_temp.data().gio_hang;
+        let temp_soluong;
+
+        products.forEach((product)=>{
+            if(product.id == id)
+            {
+                temp_soluong = product.so_luong;
+            }
+        })
+        temp_giohang.forEach((product)=>{
+            if(product.id == id){
+                if(temp_soluong > a)
+                {
+                    a++;
+                    document.getElementById(vitri).value = '';
+                    document.getElementById(vitri).value = a;
+                    product.so_luong = a;
+                    console.log(user_temp.id);
+                }
+                else{
+                    alert("không đủ sồ lượng trong kho");
+                }
+            }
+            db.collection("customer").doc(user_temp.id).update({
+                gio_hang : temp_giohang
+            }).then(()=>{
+                Load_value_giohang(vitri,vitri2,value);
+            })
+        })
+    })
 }
 
-function Load_soluong_giam(vitri,vitri2,value,name)
+function Load_soluong_giam(vitri,vitri2,value,id)
 {
     let a = parseInt(document.getElementById(vitri).value);
-    a --;
+    a--;
     if(a!=0)
     {
         let user = document.getElementById("sign_in_and_login").innerHTML;
         document.getElementById(vitri).value = '';
         document.getElementById(vitri).value = a;
+        db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((data)=>{
+            let user_temp;
+            data.forEach((user)=>{
+                user_temp = user;
+            })
+            let temp_giohang = user_temp.data().gio_hang;
 
-        for(let account of account_infs)
-        {
-            if(account.username == user)
-            for(let product of account.gio_hang)
-            {
-                if(product.name == name)
+            temp_giohang.forEach((product)=>{
+                if(product.id == id)
                 {
                     product.so_luong = a;
-                    break;
                 }
-            }
-        }
-    Load_value_giohang(vitri,vitri2,value);
+            })
+
+            db.collection("customer").doc(user_temp.id).update({
+                gio_hang : temp_giohang
+            }).then(()=>{
+                Load_value_giohang(vitri,vitri2,value);
+            })
+
+        })
     }
 }
 
@@ -2037,60 +1905,63 @@ function Load_value_giohang(vitri,vitri2,value)
 {
     
     let a = parseInt(document.getElementById(vitri).value);
-    console.log(a);
     document.getElementById(vitri2).innerHTML = "";
-    console.log(value);
     document.getElementById(vitri2).innerHTML += ``+add_String(a*value)+` ₫`;
     Load_sum_all();
 }
 
-function Load_product_delete(name)
+function Load_product_delete(id)
 {
     let user = document.getElementById("sign_in_and_login").innerHTML;
     let a=[];
-    for(let account of account_infs)
-    {
-        if(account.username == user)
-        {
-            
-            for(let product of account.gio_hang)
+    db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((data)=>{
+        let user_temp;
+        data.forEach((user)=>{
+            user_temp = user;
+        })
+
+        let temp_giohang = user_temp.data().gio_hang;
+        let count = 0;
+        temp_giohang.forEach((product)=>{
+            if(product.id == id)
             {
-                if(product.name != name)
-                {
-                    a.push(product);
-                }
+                temp_giohang.splice(count,1);
             }
-            account.gio_hang =a;
+            count ++;
+        })
+
+        //update data
+        db.collection("customer").doc(user_temp.id).update({
+            gio_hang : temp_giohang
+        })
+        .then(()=>{
+            console.log("xoa gio hang thanh cong!!!");
             Load_giohang();
-            return;
-        }
+            Load_sum_all();
+        })
+
         
-    }
-    Load_sum_all();
+    })
 }
 
 function Load_sum_all(){
     let user = document.getElementById("sign_in_and_login").innerHTML;
     let sum = 0;
-    for(let account of account_infs)
-    {
-        if(account.username == user)
-        {
-            for(let product of account.gio_hang)
-            {
-                for(let a of products)
-                {
-                    if(a.name == product.name)
-                    {
-                        sum += a.price * product.so_luong;
-                        break;
-                    }
-                }
-            }
-        }
-    }
-    document.getElementById("sum_all_sp").innerHTML = '';
-    document.getElementById("sum_all_sp").innerHTML = add_String(sum) +` ₫`;
+    db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((data)=>{
+        let user_temp ;
+        data.forEach((user)=>{
+            user_temp = user;
+        })
+
+        let temp_giohang = user_temp.data().gio_hang;
+        temp_giohang.forEach((product)=>{
+            sum += product.value * product.so_luong;
+        })
+        console.log(sum);
+        document.getElementById("sum_all_sp").innerHTML = '';
+        document.getElementById("sum_all_sp").innerHTML = add_String(sum) +` ₫`;
+    })
+    
 }
 
 function Load_ct_sp_Exit()
@@ -2105,15 +1976,12 @@ function Load_ct_sp(id)
     let a = parseInt(id);
     document.getElementsByClassName("ct_product_giohang_1")[0].style.display = "block";
     document.getElementsByClassName("ct_product_giohang_1")[0].innerHTML = "";
-    for(product of products)
-    {
-        if(product.id == a)
-        {
 
-            document.getElementsByClassName("ct_product_giohang_1")[0].innerHTML +=
-
+    db.collection("products").doc(id).get().then((data)=>{
+        let product = data.data();
+        document.getElementsByClassName("ct_product_giohang_1")[0].innerHTML +=
             `
-            <div><p id="Exit" onclick="Load_ct_sp_Exit()">X</p></div>
+            <div><i class="far fa-times-circle" id="Exit" onclick="Load_ct_sp_Exit()"></i></div>
             <div class="title_sp">
                 <h2><p id = "product_name">`+product.name+`</p></h2>
             </div>
@@ -2191,8 +2059,7 @@ function Load_ct_sp(id)
         start_vote1("start-icon1");
         Load_discount(product.value,product.discount);
         return;
-        }
-    }
+    })
 }
 
 function Load_CT_giohang(id)
@@ -2203,24 +2070,50 @@ function Load_CT_giohang(id)
 
 function Load_Thanh_toan()
 {
-    let user = document.getElementById("sign_in_and_login").innerHTML;
-    for(let account of account_infs)
-    {
-        if(account.username == user)
+    db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((data)=>{
+        let user_temp;
+        data.forEach((user)=>{
+            user_temp = user;
+        })
+        let date_submmited = new Date();
+        if(user_temp.data().gio_hang.length > 0)
         {
-            for(let product of account.gio_hang)
-            {
-                for(let a of products)
-                {
-                    if(a.name == product.name)
-                    a.so_luong -= product.so_luong; 
-                }
-            }
-            account.gio_hang = [];
-            break;
+            db.collection("order").add({
+                id_user : user_temp.id,
+                date_submitted : date_submmited,
+                list_product_incart : user_temp.data().gio_hang
+            })
+            .then(()=>{
+                //update so luong san pham
+                user_temp.data().gio_hang.forEach((product)=>{
+                    for(let temp_product of products)
+                    {
+                        if(temp_product.id == product.id){
+                            db.collection("products").doc(product.id).update({
+                                so_luong : temp_product.so_luong - product.so_luong
+                            })
+
+                        }
+                    }
+                })
+    
+                //update gio hang
+                db.collection("customer").doc(user_temp.id).update({
+                    gio_hang : []
+                })
+                .then(()=>{
+                    alert("Thanh toán thành công !!!");
+                    Load_giohang();//test
+                    products = [];
+                    Load_data_product_in_firestore();
+                })
+                
+            })
         }
-    }
-    Load_giohang();
+        else{
+            alert("Không có sản phẩm trong giỏ hàng !!!");
+        }
+    })
 }
 
 function Load_list_giohang(array_product)
@@ -2229,7 +2122,8 @@ function Load_list_giohang(array_product)
     document.getElementById("gio_hang").innerHTML += `<div class="gio_hang_background">
     <div class="giohang_header">
         <h2>Giỏ Hàng</h2>
-        <h2 class="Exit_btn" onclick ="Exit_giohang()">X</h2>
+        <i class="far fa-times-circle Exit_btn" onclick ="Exit_giohang()"></i>
+        
     </div>
     <div class="title_giohang">
         <h3 class="name_title_sp">Sản Phẩm</h3>
@@ -2242,7 +2136,7 @@ function Load_list_giohang(array_product)
     <div class="sum_value">
         <h2>Tổng Tiền: </h2>
         <h1 id="sum_all_sp"></h1>
-        <button onclick = "Load_Thanh_toan()">Mua Hàng</button>
+        <button onclick = "check_confirm_checkout('Bạn có muốn đặt hàng những sản phẩm này ?')">Mua Hàng</button>
     </div>
 </div>
     <div class = "ct_product_giohang_1" >
@@ -2253,7 +2147,7 @@ function Load_list_giohang(array_product)
     {
         for(let a of products)
         {
-            if(a.name == product.name)
+            if(a.id == product.id)
             {
                 document.getElementsByClassName("List_sp_giohang")[0].innerHTML +=
                 `<div class="product_giohang">
@@ -2264,12 +2158,12 @@ function Load_list_giohang(array_product)
                     <div class="value_product_giohang">
                     </div>
                     <div class="so_luong">
-                        <p class="so_luong_1" onclick = "Load_soluong_giam('so_luong_2_`+a.id+`','sum_product_`+a.id+`','`+a.price+`','`+product.name+`')">-</p>
+                        <p class="so_luong_1" onclick = "Load_soluong_giam('so_luong_2_`+a.id+`','sum_product_`+a.id+`','`+a.price+`','`+product.id+`')">-</p>
                         <input type="text"  class="so_luong_2" id="so_luong_2_`+a.id+`"  value = "`+product.so_luong+`">
-                        <p class="so_luong_1" onclick = "Load_soluong_tang('so_luong_2_`+a.id+`','sum_product_`+a.id+`','`+a.price+`','`+product.name+`')">+</p>
+                        <p class="so_luong_1" onclick = "Load_soluong_tang('so_luong_2_`+a.id+`','sum_product_`+a.id+`','`+a.price+`','`+product.id+`')">+</p>
                     </div>
                     <p class="sum_product" id = "sum_product_`+a.id+`">`+add_String(a.price * product.so_luong)+` ₫ </p>
-                    <i class="fas fa-trash-alt icon_delete" id = "delete_`+a.id+`" onclick = "Load_product_delete('`+product.name+`')"> Xóa</i>
+                    <i class="fas fa-trash-alt icon_delete" id = "delete_`+a.id+`" onclick = "check_confirm_delete_product('Bạn thực sự muốn xóa sản phẩm này ?','`+product.id+`')"> Xóa</i>
                     </div>
                 </div>`;
                 Load_discount_giohang(a.value,a.price,vitri);
@@ -2287,16 +2181,208 @@ function Load_list_giohang(array_product)
 //#region Them san pham
 function admin()
 {
-    let user = document.getElementById("sign_in_and_login").innerHTML;
-    for(let account of account_infs)
-    {
-        if(account.username == user)
-        {
-            if(account.style == "Admin")
+    let user = auth.currentUser.displayName;
+    db.collection("customer").where("username","==",user).get().then((account)=>{
+        let temp_account ;
+        account.forEach((user_account)=>{
+            temp_account = user_account;
+        })
+        if(temp_account.style == "Admin")
             {
                 document.getElementById("btn-login").innerHTML += `<button><b onclick="">Admin</b></button>`;
             }
-        }
-    }
+    });
 }
 //#endregion
+function render_order(array_list,dem){
+    let sum = 0;
+    for(let product of array_list){
+
+        db.collection("products").doc(product.id).get().then((doc)=>{
+            document.getElementsByClassName("list-product-order")[dem].innerHTML += `
+            <div class="order-product">
+                    <img src="`+doc.data().img_list[0]+`" alt="">
+                    <div class="info-product-order-bg border-bottom">
+                        <div class="info-product-order ">
+                            <div class="name-pd-order">
+                                <p>`+doc.data().name+`</p>
+                            </div>
+                            <div class="amount-pd-order"><p>Số lượng : `+product.so_luong+`</p></div>
+                            <div class="price-pd-order">`+add_String(product.value*product.so_luong)+` ₫</div>
+                        </div>
+                    </div>
+            </div>`;
+        });
+        sum+= product.value*product.so_luong;
+    }
+    return sum;
+}
+function buble_sort(temp_list)
+{
+    let list_render_product =[];
+    temp_list.forEach((order)=>{
+        let temp = {
+            id : order.id,
+            data : order.data()
+        }
+        list_render_product.push(temp);
+    })
+    for (let i = 0; i < list_render_product.length - 1; i++)
+    {
+        for (let j = 0; j < list_render_product.length - i - 1; j++)
+        {
+            if (list_render_product[j].data.date_submmited.seconds < list_render_product[j+1].data.date_submmited.seconds) 
+            {
+                // swap arr[j+1] và arr[i]
+                console.log("chuyen ");
+                let temp = list_render_product[j];
+                list_render_product[j] = list_render_product[j + 1];
+                list_render_product[j + 1] = temp;
+            }
+        }
+    }
+    return list_render_product;
+}
+function Load_list_order(){
+    document.getElementById("List-order-incart").innerHTML = '';
+    document.getElementById("List-order-incart").innerHTML += `
+    <div class="order">
+        <div class="order-back">
+            <div class="list-order">
+                <div class="close-button" onclick="close_tab_order()">
+                    <i class="far fa-times-circle" ></i>
+                </div>
+                <div class="title-order">ĐƠN HÀNG</div>
+                <div class="list-order-status">
+                    
+                    <div class="show-order">    
+                        <div class="list-order-accept show-order-bg">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+    document.getElementsByClassName("order")[0].style.display = "flex";
+
+    db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((data)=>{
+        let user_temp ;
+        data.forEach((user)=>{
+            user_temp = user;
+        })
+        console.log(user_temp.id);
+        let count = 0;
+        db.collection("order").where("id_user","==",user_temp.id).get().then((data_order)=>{
+            let temp_list_order = buble_sort(data_order);
+            temp_list_order.forEach((order)=>{
+                document.getElementsByClassName("show-order-bg")[0].innerHTML += `
+                    <div class="list-order-info">
+                        <div class="list-order-info-left">
+                            <div class="title-order-info">
+                                <p>Mã đơn hàng : #`+order.id+`</p>
+                                <p></p>
+                            </div>
+                            <div class="list-product-order">
+                            </div>
+                        </div>
+                        <div class="list-order-info-right">
+                            <div class="list-order-info-right-bg">
+                                <div class="order-cart">
+                                    <p class="title-or">Tổng giá trị sản phẩm</p>
+                                    <p class="sum-price-order"></p>
+                                </div>
+                                <div class="order-cart">
+                                    <div class="shipper-type">
+                                        <p class="title-or">Phí vận chuyển</p>
+                                        <p class="type-ship-cash"></p>
+                                    </div>
+                                    <p class="ship-cash"> ₫</p>
+                                </div>
+                                <div class="order-cart">
+                                    <div class="payment">
+                                        <p class="title-or">Số tiền phải thanh toán</p>
+                                        <p>Thanh toán khi giao hàng (COD)</p>
+                                    </div>
+                                    <p class="ship-code"> ₫</p>
+                                </div>
+                                <p class="cancel-order"> 
+                                
+                                </p>
+                            </div>
+                        </div>
+                    </div>`;
+                let sum =0;
+                sum = render_order(order.data.list_product_incart,count);
+                
+                document.getElementsByClassName("ship-cash")[count].innerHTML =add_String("15000") + "₫";
+                let sum_checkout = add_String(sum + Number(45000));
+                document.getElementsByClassName("sum-price-order")[count].innerHTML = add_String(sum) + " ₫";
+                document.getElementsByClassName("ship-code")[count].innerHTML = sum_checkout + " ₫";
+
+                count++;
+            })
+           
+        })
+    })  
+}
+
+function close_tab_order(){
+    document.getElementsByClassName("order")[0].style.display = "none";
+}
+
+// check comfirm
+function render_From_confirm(message)
+{
+    document.getElementsByClassName("confirm-accepted")[0].style.display = "flex";
+    document.getElementsByClassName("confirm-accepted")[0].innerHTML = "";
+    document.getElementsByClassName("confirm-accepted")[0].innerHTML += `<div class="pop-up-comfirm">
+    <p>`+message+`</p>
+    <div class="selection-bool">
+        <input type="submit" value="Đồng ý" onclick = "" id="accept">
+        <input type="submit" value="Trở về" id ="cancel">
+    </div>
+    </div>`;
+}
+
+function check_confirm_delete_product(message,id_product)
+{
+    render_From_confirm(message);
+    
+    document.getElementById("accept").addEventListener("click",()=>{
+        Load_product_delete(id_product)
+        document.getElementsByClassName("confirm-accepted")[0].style.display = "none";
+        document.getElementsByClassName("confirm-accepted")[0].innerHTML = "";
+    });
+    document.getElementById("cancel").addEventListener("click",()=>{
+        document.getElementsByClassName("confirm-accepted")[0].style.display = "none";
+        document.getElementsByClassName("confirm-accepted")[0].innerHTML = "";
+    });
+}
+
+function check_confirm_checkout(message)
+{
+    db.collection("customer").where("username","==",auth.currentUser.displayName).get().then((data)=>{
+        let user_temp;
+        data.forEach((user)=>{
+            user_temp = user;
+        })
+        if(user_temp.data().gio_hang.length > 0)
+        {
+            render_From_confirm(message);
+            document.getElementById("accept").addEventListener("click",()=>{
+                Load_Thanh_toan();
+                document.getElementsByClassName("confirm-accepted")[0].style.display = "none";
+                document.getElementsByClassName("confirm-accepted")[0].innerHTML = "";
+            });
+            document.getElementById("cancel").addEventListener("click",()=>{
+                document.getElementsByClassName("confirm-accepted")[0].style.display = "none";
+                document.getElementsByClassName("confirm-accepted")[0].innerHTML = "";
+            });
+        }
+        else{
+            alert("Không có sản phẩm trong giỏ hàng !!!");
+        }
+    });
+    
+}
