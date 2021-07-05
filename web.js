@@ -2231,7 +2231,7 @@ function buble_sort(temp_list)
     {
         for (let j = 0; j < list_render_product.length - i - 1; j++)
         {
-            if (list_render_product[j].data.date_submmited.seconds < list_render_product[j+1].data.date_submmited.seconds) 
+            if (list_render_product[j].data.date_submitted.seconds < list_render_product[j+1].data.date_submitted.seconds) 
             {
                 // swap arr[j+1] và arr[i]
                 console.log("chuyen ");
